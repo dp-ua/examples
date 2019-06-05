@@ -1,14 +1,16 @@
 package com.epam.webinar.task1;
 
 
-import org.apache.catalina.LifecycleState;
-import org.apache.logging.log4j.util.Strings;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Part5 {
+// 3) В методе Part5.main(String[]):
+//    a) получить n как параметр командной строки;
+//    b) получить с помощью вызова метода getPrimeNumbers массив из n элементов;
+//    c) распечатать элементы массива через пробел в консоль.
+// Вывод не должен заканчиваться пробельным символом.
 
     public static void main(String[] args) {
         try {
@@ -57,13 +59,4 @@ public class Part5 {
         }
         return  result.parallelStream().mapToInt(Integer::intValue).toArray();
     }
-//---------------------------
-
-//
-//            3) В методе Part5.main(String[]):
-//    a) получить n как параметр командной строки;
-//    b) получить с помощью вызова метода getPrimeNumbers массив из n элементов;
-//    c) распечатать элементы массива через пробел в консоль.
-//    Вывод не должен заканчиваться пробельным символом.
-
 }
