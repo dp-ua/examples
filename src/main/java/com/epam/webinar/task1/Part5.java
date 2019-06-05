@@ -11,20 +11,22 @@ public class Part5 {
 //    b) получить с помощью вызова метода getPrimeNumbers массив из n элементов;
 //    c) распечатать элементы массива через пробел в консоль.
 // Вывод не должен заканчиваться пробельным символом.
-
     public static void main(String[] args) {
+        Part5 work = new Part5();
+
+        if (args.length!=1) System.out.println("Wrong arguments. Check input");
         try {
             int number = Integer.parseInt(args[0]);
-            int[] numbers = getPrimeNumbers(number);
+            int[] numbers = work.getPrimeNumbers(number);
             System.out.println(Arrays.toString(numbers).replaceAll("[\\[\\],]", ""));
 
-        }   catch (Exception e) {
-            System.out.println("Error. Cant calculate. " + e.getMessage());
+        }   catch (NumberFormatException e) {
+            System.out.println("Error. Not a INT number in argument. Check input ");
         }
 
     }
 
-    public static boolean isPrime(int n) {
+    public  boolean isPrime(int n) {
         //    который возвращает true, если число n простое; false в противном случае.
         int sqrt = (int) Math.sqrt(n);
         int i = 2;
@@ -38,7 +40,7 @@ public class Part5 {
     }
 
 
-    public static int[] getPrimeNumbers(int n) {
+    public  int[] getPrimeNumbers(int n) {
         //    который возвращает массив из n элементов, заполненный восходящим рядом простых чисел (2, 3, 5, 7, ...).
         List<Integer> result = new ArrayList<>();
 
