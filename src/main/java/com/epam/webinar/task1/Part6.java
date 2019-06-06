@@ -30,20 +30,33 @@ import java.util.TreeMap;
 public class Part6 {
 
     public static void main(String[] args) {
+        if (args.length != 1) {
+            System.out.println("Wrong input");
+            return;
+        }
+        int n=0;
+        try {
+            n = Integer.parseInt(args[0]);
+        }catch (NumberFormatException e) {
+            System.out.println("Wrong input");
+            return;
+        }
+        if (n < 1) {
+            System.out.println("Wrong input");
+            return;
+        }
         Part6 work = new Part6();
-        System.out.println(work.map2FactString(work.getPrimeMultiply(8)));
-        System.out.println(work.map2FactString(work.getPrimeMultiply(20)));
-        System.out.println(work.map2FactString(work.getPrimeMultiply(360)));
+        System.out.println(work.map2FactString(work.getPrimeMultiply(n)));
 
     }
 
     private String map2FactString(Map<Integer, Integer> map) {
-        String result="";
+        String result = "";
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            result+=entry.getKey()+"^" +entry.getValue() + " * ";
+            result += entry.getKey() + "^" + entry.getValue() + " * ";
         }
 
-        return result.substring(0,result.length()-3);
+        return result.substring(0, result.length() - 3);
     }
 
     public Map<Integer, Integer> getPrimeMultiply(int number) {
@@ -53,7 +66,7 @@ public class Part6 {
         while (op > 1) {
             for (int i = 2; i <= op; i = nextPrime(i)) {
                 if (op % i == 0) {
-                    op/=i;
+                    op /= i;
                     if (map.containsKey(i)) map.put(i, map.get(i) + 1);
                     else map.put(i, 1);
                     break;
