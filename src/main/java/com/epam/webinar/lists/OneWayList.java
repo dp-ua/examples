@@ -182,6 +182,7 @@ public class OneWayList<T> extends AbstractList<T> {
         head = null;
     }
 
+
     public boolean add(T obj) {
         Node addNode = new Node(obj);
         if (head == null) {
