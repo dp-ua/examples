@@ -46,6 +46,12 @@ class MyArrayListTest {
         list.remove(5);
         normalList.remove(5);
         assertArrayEquals(normalList.toArray(), list.toArray());
+
+        Integer obj = new Integer(5);
+        list.remove(obj);
+        normalList.remove(obj);
+        assertArrayEquals(normalList.toArray(), list.toArray());
+
     }
 
     @org.junit.jupiter.api.Test
