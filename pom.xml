@@ -88,22 +88,28 @@
             <artifactId>javax.persistence-api</artifactId>
             <version>2.2</version>
         </dependency>
-
-
-<!-- мои тесты с гибернейт
         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>3.3.1.GA</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.4.0</version>
+            <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>3.4.0.GA</version>
-        </dependency>
 
--->
+        <!-- мои тесты с гибернейт
+                <dependency>
+                    <groupId>org.hibernate</groupId>
+                    <artifactId>hibernate-core</artifactId>
+                    <version>3.3.1.GA</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.hibernate</groupId>
+                    <artifactId>hibernate-entitymanager</artifactId>
+                    <version>3.4.0.GA</version>
+                </dependency>
+
+        -->
 
     </dependencies>
 
