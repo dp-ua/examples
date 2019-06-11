@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class MyLinkedList<T> extends AbstractList<T> {
+public class TwoWayList<T> extends AbstractList<T> {
     private Node head;
     private Node tail;
     private int count;
@@ -35,18 +35,12 @@ public class MyLinkedList<T> extends AbstractList<T> {
     //done
     public T set(int index, T obj) {
         if (index < 0 || index > count - 1) throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + count);
-        Node newNode = new Node(obj);
+
         Node oldNode = getInternal(index);
+        T result = oldNode.getObj();
+        oldNode.setObj(obj);
 
-        newNode.setNext(oldNode.getNext());
-        newNode.setBefore(oldNode.getBefore());
-
-        if (oldNode != head) oldNode.getBefore().setNext(newNode);
-        else head = newNode;
-        if (oldNode != tail) oldNode.getNext().setBefore(newNode);
-        else tail = newNode;
-
-        return oldNode.getObj();
+        return result;
     }
 
     //done
@@ -137,7 +131,7 @@ public class MyLinkedList<T> extends AbstractList<T> {
         private Node current;
 
         public MyIterator() {
-            current = MyLinkedList.this.head;
+            current = TwoWayList.this.head;
         }
 
         /**
@@ -211,7 +205,7 @@ public class MyLinkedList<T> extends AbstractList<T> {
     }
 
     //done
-    public MyLinkedList() {
+    public TwoWayList() {
         count = 0;
         head = null;
         tail = null;
