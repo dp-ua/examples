@@ -113,19 +113,10 @@ public class OneWayList<T> extends AbstractList<T> {
 
     public T set(int index, T obj) {
         if (index < 0 || index > count - 1) throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + count);
-        Node removeNode;
-        Node setNode = new Node(obj);
-        if (index == 0) {
-            removeNode = head;
-            setNode.setNext(head.getNext());
-            head = setNode;
-        } else {
-            Node node = getInternal(index - 1);
-            removeNode = node.getNext();
-            node.setNext(setNode);
-            setNode.setNext(removeNode.getNext());
-        }
-        return removeNode.getObj();
+        Node setNode = getInternal(index);
+        T result = setNode.getObj();
+        setNode.setObj(obj);
+        return result;
     }
 
     public T remove(int index) {
