@@ -1,6 +1,5 @@
 package com.examples.sweater;
 
-import com.examples.swing.Sweater;
 import org.apache.log4j.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
