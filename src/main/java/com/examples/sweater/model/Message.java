@@ -17,7 +17,7 @@ public class Message {
     private User author;
 
     public String getAuthorName() {
-        return author!= null? author.getUsername() :"<none>";
+        return author!= null? author.getUsername() :"User not set";
     }
 
     public Message() {
